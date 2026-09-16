@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { createStation } from '../api'
+import { createStation } from "../api.js";
 
 const initialForm = {
   station_name: '',
@@ -45,6 +45,8 @@ export default function AddStation() {
 
     if (form.hourly_rate === '') {
       newErrors.hourly_rate = 'Hourly rate is required.'
+    } else if (isNaN(Number(form.hourly_rate))) {
+      newErrors.hourly_rate = 'Hourly rate must be a valid number.'
     } else if (Number(form.hourly_rate) < 0) {
       newErrors.hourly_rate = 'Hourly rate cannot be negative.'
     }
@@ -77,8 +79,19 @@ export default function AddStation() {
 
       navigate(`/stations/${station.id}`)
     } catch (err) {
-      setErrors(err.validation || {})
-      setGeneralError(err.messageFromServer || err.message)
+      // Laravel validation errors look like { field: ["message", ...] }.
+      // Flatten each field down to its first message for display.
+      if (err.errors) {
+        const fieldErrors = {}
+        Object.entries(err.errors).forEach(([field, messages]) => {
+          fieldErrors[field] = Array.isArray(messages) ? messages[0] : messages
+        })
+        setErrors(fieldErrors)
+        setGeneralError('')
+      } else {
+        setErrors({})
+        setGeneralError(err.message || 'Failed to save station.')
+      }
     } finally {
       setSaving(false)
     }
@@ -147,7 +160,7 @@ export default function AddStation() {
             />
             {errors.hourly_rate && <small className="field-error">{errors.hourly_rate}</small>}
 
-            <button className="primary-btn" type="submit" disabled={saving}>
+            <button className="primary-btn" type="submit" disablend={saving}>
               {saving ? 'Saving...' : 'Save Station'}
             </button>
           </form>

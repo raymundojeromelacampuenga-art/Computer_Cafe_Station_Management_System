@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { getStation } from '../api'
+import { getStationDetails } from '../api'
 
 export default function StationDetails() {
   const { id } = useParams()
@@ -14,7 +14,7 @@ export default function StationDetails() {
       try {
         setLoading(true)
         setError('')
-        const data = await getStation(id)
+        const data = await getStationDetails(id)
         setStation(data)
       } catch (err) {
         setError(err.message)

@@ -5,8 +5,8 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f4f6f8;
-  color: #20242a;
+  background: #f6f9f7;
+  color: #1f2a24;
 }
 
 button,
@@ -25,7 +25,7 @@ button {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(135deg, #17202a, #34495e);
+  background: #f0f5f1;
 }
 
 .login-card {
@@ -33,8 +33,9 @@ button {
   max-width: 420px;
   padding: 35px;
   background: white;
-  border-radius: 18px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  border: 1px solid #e2e9e4;
+  box-shadow: 0 4px 16px rgba(31, 84, 58, 0.06);
 }
 
 .logo {
@@ -44,19 +45,20 @@ button {
   justify-content: center;
   align-items: center;
   margin: 0 auto 15px;
-  border-radius: 30%;
-  background: #e9eef2;
+  border-radius: 16px;
+  background: #eaf3ec;
   font-size: 32px;
 }
 
 .login-card h1 {
   text-align: center;
   margin: 0;
+  color: #16382a;
 }
 
 .subtitle {
   text-align: center;
-  color: #777;
+  color: #6b7d72;
   margin-bottom: 28px;
 }
 
@@ -64,13 +66,14 @@ label {
   display: block;
   margin: 16px 0 7px;
   font-weight: bold;
+  color: #2c3b32;
 }
 
 input,
 select {
   width: 100%;
   padding: 12px 13px;
-  border: 1px solid #ccd2d8;
+  border: 1px solid #d3ddd6;
   border-radius: 8px;
   outline: none;
   background: white;
@@ -78,7 +81,7 @@ select {
 
 input:focus,
 select:focus {
-  border-color: #34495e;
+  border-color: #2f7a53;
 }
 
 .primary-btn {
@@ -87,13 +90,14 @@ select:focus {
   border-radius: 8px;
   padding: 13px;
   margin-top: 22px;
-  background: #263746;
+  background: #2f7a53;
   color: white;
   font-weight: bold;
+  transition: background 0.15s;
 }
 
 .primary-btn:hover {
-  background: #1c2a36;
+  background: #26643f;
 }
 
 .primary-btn:disabled {
@@ -116,14 +120,15 @@ select:focus {
 }
 
 .status-box {
-  background: #eef3f7;
-  color: #43515d;
+  background: #eaf3ec;
+  color: #2c4a38;
 }
 
 .empty-box {
   background: white;
-  border: 1px solid #ddd;
+  border: 1px solid #e2e9e4;
   text-align: center;
+  color: #6b7d72;
 }
 
 .field-error {
@@ -137,7 +142,7 @@ select:focus {
 }
 
 .topbar {
-  background: #263746;
+  background: #16382a;
   color: white;
   padding: 22px 6%;
   display: flex;
@@ -152,16 +157,22 @@ select:focus {
 
 .topbar p {
   margin: 0;
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 .logout-btn,
 .refresh-btn {
-  border: 1px solid #ccd2d8;
+  border: 1px solid #cfe0d5;
   background: white;
-  color: #263746;
+  color: #16382a;
   padding: 9px 15px;
   border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.logout-btn:hover,
+.refresh-btn:hover {
+  background: #eaf3ec;
 }
 
 .content {
@@ -179,11 +190,12 @@ select:focus {
 
 .section-title h2 {
   margin: 0;
+  color: #16382a;
 }
 
 .section-title p {
   margin: 5px 0 0;
-  color: #777;
+  color: #6b7d72;
 }
 
 .station-grid {
@@ -198,16 +210,17 @@ select:focus {
   align-items: center;
   padding: 22px;
   background: white;
-  border-radius: 14px;
-  border: 1px solid #e0e3e6;
+  border-radius: 12px;
+  border: 1px solid #e2e9e4;
   color: inherit;
   text-decoration: none;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
 }
 
 .station-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(31, 84, 58, 0.08);
+  border-color: #cfe0d5;
 }
 
 .station-icon,
@@ -215,8 +228,8 @@ select:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #eef2f5;
-  border-radius: 12px;
+  background: #eaf3ec;
+  border-radius: 10px;
 }
 
 .station-icon {
@@ -228,18 +241,19 @@ select:focus {
 
 .station-card h3 {
   margin: 0 0 7px;
+  color: #16382a;
 }
 
 .station-card p {
   margin: 0 0 10px;
-  color: #777;
+  color: #6b7d72;
 }
 
 .badge {
   display: inline-block;
   padding: 5px 10px;
-  background: #e8edf1;
-  color: #263746;
+  background: #eaf3ec;
+  color: #26643f;
   border-radius: 20px;
   font-size: 13px;
   font-weight: bold;
@@ -255,11 +269,16 @@ select:focus {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #263746;
+  background: #2f7a53;
   color: white;
   text-decoration: none;
   font-size: 34px;
-  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 7px 18px rgba(31, 84, 58, 0.25);
+  transition: background 0.15s;
+}
+
+.floating-btn:hover {
+  background: #26643f;
 }
 
 .form-container,
@@ -272,7 +291,7 @@ select:focus {
 .back-link {
   border: 0;
   background: transparent;
-  color: #263746;
+  color: #2f7a53;
   padding: 0;
   font-weight: bold;
   margin-bottom: 18px;
@@ -281,13 +300,15 @@ select:focus {
 .form-card,
 .details-card {
   background: white;
-  border-radius: 15px;
+  border-radius: 12px;
+  border: 1px solid #e2e9e4;
   padding: 30px;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(31, 84, 58, 0.05);
 }
 
 .form-card h2 {
   margin-top: 0;
+  color: #16382a;
 }
 
 .details-card {
@@ -304,17 +325,18 @@ select:focus {
 .details-card h2 {
   margin: 18px 0 5px;
   font-size: 30px;
+  color: #16382a;
 }
 
 .details-subtitle {
-  color: #777;
+  color: #6b7d72;
   margin-top: 0;
 }
 
 .details-list {
   margin-top: 28px;
   text-align: left;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #e2e9e4;
 }
 
 .details-list div {
@@ -322,11 +344,11 @@ select:focus {
   justify-content: space-between;
   gap: 20px;
   padding: 15px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eef2ef;
 }
 
 .details-list span {
-  color: #777;
+  color: #6b7d72;
 }
 
 @media (max-width: 600px) {

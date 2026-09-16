@@ -13,9 +13,9 @@ export default function StationList() {
       setLoading(true)
       setError('')
       const data = await getStations()
-      setStations(data)
+      setStations(Array.isArray(data) ? data : [])
     } catch (err) {
-      setError(err.message)
+      setError(err.message || 'Failed to load stations.')
     } finally {
       setLoading(false)
     }
@@ -37,7 +37,9 @@ export default function StationList() {
           <h1>PC Cafe Stations</h1>
           <p>Computer Cafe Station Management</p>
         </div>
-        <button className="logout-btn" onClick={logout}>Logout</button>
+        <button className="logout-btn" onClick={logout}>
+          Logout
+        </button>
       </header>
 
       <main className="content">
@@ -46,7 +48,9 @@ export default function StationList() {
             <h2>Station List</h2>
             <p>Available PC rental workstations</p>
           </div>
-          <button className="refresh-btn" onClick={loadStations}>Refresh</button>
+          <button className="refresh-btn" onClick={loadStations}>
+            Refresh
+          </button>
         </div>
 
         {loading && <div className="status-box">Loading stations...</div>}
