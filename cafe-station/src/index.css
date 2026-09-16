@@ -4,9 +4,9 @@
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f6f9f7;
-  color: #1f2a24;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;
+  background: #f7faf8;
+  color: #1a1f1d;
 }
 
 button,
@@ -19,69 +19,85 @@ button {
   cursor: pointer;
 }
 
+/* ---------- Login ---------- */
+
 .login-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: #f0f5f1;
+  background: #f7faf8;
 }
 
 .login-card {
   width: 100%;
-  max-width: 420px;
-  padding: 35px;
+  max-width: 380px;
+  padding: 48px 40px;
   background: white;
-  border-radius: 12px;
-  border: 1px solid #e2e9e4;
-  box-shadow: 0 4px 16px rgba(31, 84, 58, 0.06);
+  border-radius: 16px;
+  border: 1px solid #e9ede9;
 }
 
 .logo {
-  width: 65px;
-  height: 65px;
+  width: 48px;
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 15px;
-  border-radius: 16px;
-  background: #eaf3ec;
-  font-size: 32px;
+  margin: 0 auto 24px;
+  border-radius: 10px;
+  background: #1fcb86;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .login-card h1 {
   text-align: center;
   margin: 0;
-  color: #16382a;
+  font-size: 24px;
+  font-weight: 600;
+  color: #14201a;
+  letter-spacing: -0.3px;
 }
 
 .subtitle {
   text-align: center;
-  color: #6b7d72;
-  margin-bottom: 28px;
+  color: #8a948e;
+  margin: 6px 0 32px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 
 label {
   display: block;
-  margin: 16px 0 7px;
-  font-weight: bold;
-  color: #2c3b32;
+  margin: 18px 0 6px;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b756f;
 }
 
 input,
 select {
   width: 100%;
-  padding: 12px 13px;
-  border: 1px solid #d3ddd6;
+  padding: 11px 13px;
+  border: 1px solid #e0e5e1;
   border-radius: 8px;
   outline: none;
-  background: white;
+  background: #fbfcfb;
+  font-size: 14px;
+  transition: border-color 0.15s, background 0.15s;
 }
 
 input:focus,
 select:focus {
-  border-color: #2f7a53;
+  border-color: #1fcb86;
+  background: white;
 }
 
 .primary-btn {
@@ -89,15 +105,16 @@ select:focus {
   border: 0;
   border-radius: 8px;
   padding: 13px;
-  margin-top: 22px;
-  background: #2f7a53;
+  margin-top: 28px;
+  background: #1fcb86;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 14px;
   transition: background 0.15s;
 }
 
 .primary-btn:hover {
-  background: #26643f;
+  background: #17a86d;
 }
 
 .primary-btn:disabled {
@@ -108,9 +125,10 @@ select:focus {
 .error-box,
 .status-box,
 .empty-box {
-  padding: 13px;
+  padding: 12px 14px;
   border-radius: 8px;
   margin: 15px 0;
+  font-size: 14px;
 }
 
 .error-box {
@@ -120,29 +138,32 @@ select:focus {
 }
 
 .status-box {
-  background: #eaf3ec;
-  color: #2c4a38;
+  background: #e9fbf3;
+  color: #147a52;
 }
 
 .empty-box {
   background: white;
-  border: 1px solid #e2e9e4;
+  border: 1px solid #e9ede9;
   text-align: center;
-  color: #6b7d72;
+  color: #8a948e;
 }
 
 .field-error {
   display: block;
   color: #b42318;
   margin-top: 5px;
+  font-size: 13px;
 }
+
+/* ---------- App shell ---------- */
 
 .app-page {
   min-height: 100vh;
 }
 
 .topbar {
-  background: #16382a;
+  background: #14201a;
   color: white;
   padding: 22px 6%;
   display: flex;
@@ -153,26 +174,43 @@ select:focus {
 
 .topbar h1 {
   margin: 0 0 5px;
+  font-weight: 600;
 }
 
 .topbar p {
   margin: 0;
-  opacity: 0.75;
+  opacity: 0.7;
+  font-size: 14px;
 }
 
-.logout-btn,
-.refresh-btn {
-  border: 1px solid #cfe0d5;
-  background: white;
-  color: #16382a;
-  padding: 9px 15px;
+.logout-btn {
+  border: 1px solid #2b3a32;
+  background: transparent;
+  color: white;
+  padding: 9px 16px;
   border-radius: 8px;
-  transition: background 0.15s;
+  font-size: 14px;
+  transition: background 0.15s, border-color 0.15s;
 }
 
-.logout-btn:hover,
+.logout-btn:hover {
+  background: #1c2a23;
+  border-color: #3a4a41;
+}
+
+.refresh-btn {
+  border: 1px solid #d5ddd7;
+  background: white;
+  color: #14201a;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
 .refresh-btn:hover {
-  background: #eaf3ec;
+  background: #f2f6f3;
+  border-color: #1fcb86;
 }
 
 .content {
@@ -190,37 +228,38 @@ select:focus {
 
 .section-title h2 {
   margin: 0;
-  color: #16382a;
+  color: #14201a;
+  font-weight: 600;
 }
 
 .section-title p {
   margin: 5px 0 0;
-  color: #6b7d72;
+  color: #8a948e;
+  font-size: 14px;
 }
 
 .station-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
+  gap: 16px;
 }
 
 .station-card {
   display: flex;
   gap: 15px;
   align-items: center;
-  padding: 22px;
+  padding: 20px;
   background: white;
   border-radius: 12px;
-  border: 1px solid #e2e9e4;
+  border: 1px solid #e9ede9;
   color: inherit;
   text-decoration: none;
-  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .station-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(31, 84, 58, 0.08);
-  border-color: #cfe0d5;
+  border-color: #1fcb86;
+  box-shadow: 0 4px 14px rgba(31, 203, 134, 0.12);
 }
 
 .station-icon,
@@ -228,87 +267,90 @@ select:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #eaf3ec;
+  background: #e9fbf3;
   border-radius: 10px;
 }
 
 .station-icon {
-  min-width: 55px;
-  width: 55px;
-  height: 55px;
-  font-size: 27px;
+  min-width: 52px;
+  width: 52px;
+  height: 52px;
+  font-size: 24px;
 }
 
 .station-card h3 {
-  margin: 0 0 7px;
-  color: #16382a;
+  margin: 0 0 6px;
+  color: #14201a;
+  font-weight: 600;
 }
 
 .station-card p {
   margin: 0 0 10px;
-  color: #6b7d72;
+  color: #8a948e;
+  font-size: 14px;
 }
 
 .badge {
   display: inline-block;
-  padding: 5px 10px;
-  background: #eaf3ec;
-  color: #26643f;
+  padding: 4px 10px;
+  background: #e9fbf3;
+  color: #147a52;
   border-radius: 20px;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .floating-btn {
   position: fixed;
-  right: 30px;
-  bottom: 30px;
-  width: 60px;
-  height: 60px;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #2f7a53;
+  background: #1fcb86;
   color: white;
   text-decoration: none;
-  font-size: 34px;
-  box-shadow: 0 7px 18px rgba(31, 84, 58, 0.25);
+  font-size: 22px;
+  box-shadow: 0 4px 12px rgba(31, 203, 134, 0.35);
   transition: background 0.15s;
 }
 
 .floating-btn:hover {
-  background: #26643f;
+  background: #17a86d;
 }
 
 .form-container,
 .details-container {
   width: 92%;
-  max-width: 700px;
+  max-width: 640px;
   margin: 30px auto;
 }
 
 .back-link {
   border: 0;
   background: transparent;
-  color: #2f7a53;
+  color: #17a86d;
   padding: 0;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 14px;
   margin-bottom: 18px;
 }
 
 .form-card,
 .details-card {
   background: white;
-  border-radius: 12px;
-  border: 1px solid #e2e9e4;
-  padding: 30px;
-  box-shadow: 0 4px 16px rgba(31, 84, 58, 0.05);
+  border-radius: 14px;
+  border: 1px solid #e9ede9;
+  padding: 32px;
 }
 
 .form-card h2 {
   margin-top: 0;
-  color: #16382a;
+  color: #14201a;
+  font-weight: 600;
 }
 
 .details-card {
@@ -316,39 +358,41 @@ select:focus {
 }
 
 .large-icon {
-  width: 90px;
-  height: 90px;
+  width: 84px;
+  height: 84px;
   margin: 0 auto 18px;
-  font-size: 45px;
+  font-size: 40px;
 }
 
 .details-card h2 {
   margin: 18px 0 5px;
-  font-size: 30px;
-  color: #16382a;
+  font-size: 26px;
+  color: #14201a;
 }
 
 .details-subtitle {
-  color: #6b7d72;
+  color: #8a948e;
   margin-top: 0;
+  font-size: 14px;
 }
 
 .details-list {
   margin-top: 28px;
   text-align: left;
-  border-top: 1px solid #e2e9e4;
+  border-top: 1px solid #eef1ee;
 }
 
 .details-list div {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  padding: 15px 0;
-  border-bottom: 1px solid #eef2ef;
+  padding: 14px 0;
+  border-bottom: 1px solid #eef1ee;
 }
 
 .details-list span {
-  color: #6b7d72;
+  color: #8a948e;
+  font-size: 14px;
 }
 
 @media (max-width: 600px) {
@@ -357,7 +401,7 @@ select:focus {
   }
 
   .topbar h1 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .content {
@@ -374,8 +418,11 @@ select:focus {
   }
 
   .form-card,
-  .details-card,
-  .login-card {
+  .details-card {
     padding: 22px;
+  }
+
+  .login-card {
+    padding: 32px 24px;
   }
 }

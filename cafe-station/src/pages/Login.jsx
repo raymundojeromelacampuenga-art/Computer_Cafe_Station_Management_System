@@ -27,9 +27,9 @@ export default function Login() {
   return (
     <div className="login-page">
       <div className="login-card">
-        <div className="logo">˗ˏˋ☕ˎˊ˗</div>
+        <div className="logo"></div>
         <h1>PC Cafe</h1>
-        <p className="subtitle">Station Management System</p>
+        <p className="subtitle">Station Management</p>
 
         <form onSubmit={handleSubmit}>
           <label>Username</label>
@@ -51,7 +51,7 @@ export default function Login() {
           {error && <div className="error-box">{error}</div>}
 
           <button className="primary-btn" type="submit">
-            Login
+            Log In
           </button>
         </form>
       </div>
