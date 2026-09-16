@@ -27,7 +27,7 @@ export default function Login() {
   return (
     <div className="login-page">
       <div className="login-card">
-        <div className="logo">☕</div>
+        <div className="logo">˗ˏˋ☕ˎˊ˗</div>
         <h1>PC Cafe</h1>
         <p className="subtitle">Station Management System</p>
 

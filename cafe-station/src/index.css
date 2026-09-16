@@ -44,7 +44,7 @@ button {
   justify-content: center;
   align-items: center;
   margin: 0 auto 15px;
-  border-radius: 50%;
+  border-radius: 30%;
   background: #e9eef2;
   font-size: 32px;
 }
