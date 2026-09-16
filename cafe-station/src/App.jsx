@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
 import StationList from './pages/StationList'
-import AddStation from './pages/AddStation'
+import AddStation from './pages/AddStation.jsx'
 import StationDetails from './pages/StationDetails'
 
 function PrivateRoute({ children }) {
